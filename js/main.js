@@ -92,17 +92,17 @@
 			});
 		});
 
-		// this.menus.forEach(function(menuEl, pos) {
-		// 	var menu_x = menuEl.getAttribute('data-menu');
-		// 	submenus.forEach(function(subMenuEl, menu_root) {
-		// 		subMenuEl.forEach(function(subMenuItem, subPos) {
-		// 			if (subMenuItem.menu == menu_x) {
-		// 				self.menusArr[pos].backIdx = menu_root;
-		// 				self.menusArr[pos].name = subMenuItem.name;
-		// 			}
-		// 		});
-		// 	});
-		// });
+		this.menus.forEach(function(menuEl, pos) {
+			var menu_x = menuEl.getAttribute('data-menu');
+			submenus.forEach(function(subMenuEl, menu_root) {
+				subMenuEl.forEach(function(subMenuItem, subPos) {
+					if (subMenuItem.menu == menu_x) {
+						self.menusArr[pos].backIdx = menu_root;
+						self.menusArr[pos].name = subMenuItem.name;
+					}
+				});
+			});
+		});
 
 		if( self.options.breadcrumbsCtrl ) {
 			this.breadcrumbsCtrl = document.createElement('nav');
